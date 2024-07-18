@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const message = document.getElementById("message");
 //login functionality
     loginLink.addEventListener("click", (e) => {
-        closeform()
         e.preventDefault();
         loginContainer.style.display = 'block';
         signupContainer.style.display = 'none';
@@ -47,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
      //signup 
     signupLink.addEventListener("click", (e) => {
-        closeform()
         e.preventDefault();
         signupContainer.style.display = "block";
         loginContainer.style.display = 'none';
@@ -122,7 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     bookBtns.forEach(bookBtn =>{
         bookBtn.addEventListener("click",()=>{
-            closeform()
             bookContainer.style.display = "block";
         });
     });
@@ -130,15 +127,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
     // close form icon function
-    function closeform(){
+    function closeform(container){
+        container.style.display = "none";
+    }
+    function closeButton(container){
         const closeBtn = document.createElement("button");
         closeBtn.textContent = "X";
+        closeBtn.classList.add("closebtn");
         closeBtn.addEventListener("click",()=>{
-           const formContainers = document.querySelectorAll(".form-container")
-           formContainers.forEach(formContainer,()=>{
-            formContainer.style.display = "none";
-           });
-        }); 
+            closeform(container); 
+        });
+        container.appendChild(closeBtn)
     }
-    
+    //add book,login and signup
+    closeButton(bookContainer);
+    closeButton(signupContainer);
+    closeButton(loginContainer);
 });

@@ -314,3 +314,15 @@ body, html {
 .form-container button[type="submit"]:hover {
     background-color: #06695d;
 }
+.closebtn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #06695d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    float: right;
+    max-width: 30px;
+}
