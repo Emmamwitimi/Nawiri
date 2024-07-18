@@ -21,13 +21,42 @@
                     <span id="notification-icon">🔔</span>
                 </div>
                 <div id="login">
-                    <button>login</button>
+                    <a href="#" id="loginLink">login</a>
+                    <a href="#" id="signupLink">signup</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    
+    <!-- Login Form -->
+    <div id="login-form" class="form-container" style="display: none;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required>
+            <button type="submit" id="loginbutton">Login</button>
+        </form>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signup-form" class="form-container" style="display: none;">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" required>
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" required>
+            <label for="signup-confirm-password">Confirm Password:</label>
+            <input type="password" id="signup-confirm-password" required>
+            <button type="submit" id="signupbutton">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Container to display messages -->
+    <div id="message"></div>
+
     <aside class="left-nav">
         <div>
             <ul class="nav-list">
@@ -101,5 +130,6 @@
             <button class="book">book</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
