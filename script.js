@@ -85,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
             message.textContent = 'Passwords do not match';
             message.style.color = 'red';
         }
+        // close form icon
+
     });
     // slide show implementation
     // Select all slideshow containers
@@ -105,9 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 slideIndex = 1;
             }
             slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+            setTimeout(showSlides, 10000); // Change image every 10 seconds
         }
 
         showSlides(); // Initial call to start the slideshow
     });
+    
 });
