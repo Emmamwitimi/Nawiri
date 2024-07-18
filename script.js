@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    //login and signup forms
     const loginForm = document.getElementById("loginForm");
     const loginLink = document.getElementById("loginLink");
     const loginContainer = document.getElementById("login-form");
@@ -10,8 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const signupButton = document.getElementById("signupButton");
 
     const message = document.getElementById("message");
-
+//login functionality
     loginLink.addEventListener("click", (e) => {
+        closeform()
         e.preventDefault();
         loginContainer.style.display = 'block';
         signupContainer.style.display = 'none';
@@ -43,8 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
             message.style.color = 'red';
         }
     });
-     
+     //signup 
     signupLink.addEventListener("click", (e) => {
+        closeform()
         e.preventDefault();
         signupContainer.style.display = "block";
         loginContainer.style.display = 'none';
@@ -85,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             message.textContent = 'Passwords do not match';
             message.style.color = 'red';
         }
-        // close form icon
+        
 
     });
     // slide show implementation
@@ -112,5 +115,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         showSlides(); // Initial call to start the slideshow
     });
+    //booking form
+    const bookBtns = document.querySelectorAll(".bookbtn");
+    const bookContainer = document.getElementById("bookcontainer");
+    const bookingForm = document.getElementById("bookingform");
+    
+    bookBtns.forEach(bookBtn =>{
+        bookBtn.addEventListener("click",()=>{
+            closeform()
+            bookContainer.style.display = "block";
+        });
+    });
+    bookingForm.addEventListener("submit",()=>{
+
+    });
+    // close form icon function
+    function closeform(){
+        const closeBtn = document.createElement("button");
+        closeBtn.textContent = "X";
+        closeBtn.addEventListener("click",()=>{
+           const formContainers = document.querySelectorAll(".form-container")
+           formContainers.forEach(formContainer,()=>{
+            formContainer.style.display = "none";
+           });
+        }); 
+    }
     
 });

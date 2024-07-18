@@ -112,7 +112,7 @@
             </div>
             <h2>Tigoni house</h2>
             <p>Tigoni House is a serene retreat center nestled in the lush greenery of the Tigoni highlands. Offering a tranquil environment, it is an ideal place for personal reflection, prayer, and spiritual growth. The center provides comfortable accommodations, beautiful gardens, and spaces for meditation.</p>
-            <button class="book">book</button>
+            <button class="bookbtn">book</button>
         </div>
         <div class="houses" id="Tewa">
             <!--tewa slides-->
@@ -132,7 +132,7 @@
             </div>
             <h2>Jahazi house</h2>
             <p>Jahazi House is a peaceful retreat center located near the coastal region, providing a perfect setting for spiritual retreats and rejuvenation. Surrounded by nature, Tewa House offers attendees a quiet atmosphere to engage in prayer, attend spiritual talks, and find inner peace.</p>
-            <button class="book">book</button>
+            <button class="bookbtn">book</button>
         </div>
         <div class="houses" id="Tusimba">
             <!--bugala slides-->
@@ -152,7 +152,7 @@
             </div>
             <h2>Tusimba house</h2>
             <p>Tusimba House is known for its welcoming and serene environment, making it an excellent choice for those seeking spiritual renewal. Located in a picturesque setting, it offers ample opportunities for personal prayer, reflection, and participation in spiritual activities.</p>
-            <button class="book">book</button>
+            <button class="bookbtn">book</button>
         </div>
         <div class="houses" id="Kisumu">
             <!--kisumu slides-->
@@ -172,7 +172,7 @@
             </div>
             <h2>Kisumu house</h2>
             <p>Kisumu House, situated by the shores of Lake Victoria, provides a unique retreat experience with stunning views and a peaceful ambiance. The center is designed to help attendees disconnect from daily distractions and focus on their spiritual journey through prayer and meditation.</p>
-            <button class="book">book</button>
+            <button class="bookbtn">book</button>
         </div>
         <div class="houses" id="Bugala">
             <!--bugala slides-->
@@ -192,7 +192,7 @@
             </div>
             <h2>Bugala house</h2>
             <p>Bugala House, located on an island, offers a remote and tranquil retreat experience. This center is perfect for those looking to deepen their spiritual life in a secluded and natural setting. It provides a variety of spiritual programs and activities to enhance personal growth.</p>
-            <button class="book">book</button>
+            <button class="bookbtn">book</button>
         </div>
         <div class="houses" id="Tigoni">
               <!--tigoni slide show-->
@@ -212,9 +212,38 @@
             </div>
             <h2>Tigoni house</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum incidunt accusamus, dolorem recusandae repudiandae repellat a fugiat magni eius mollitia dignissimos reiciendis autem neque odit dolores?</p>
-            <button class="book">book</button>
+            <button class="bookbtn">book</button>
         </div>
     </div>
+    <!--booking form-->
+    <div id="bookcontainer" class="form-container" style="display: none;">
+        <h2>Booking Form</h2>
+        <form id="bookingform">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" required>
+            
+            <label for="guestNames">List the Names of All Guests:</label>
+            <textarea id="guestNames" name="guestNames" rows="4" required></textarea>
+            
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" name="checkin" required>
+            
+            <label for="checkout">Check-out Date:</label>
+            <input type="date" id="checkout" name="checkout" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
