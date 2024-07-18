@@ -18,21 +18,32 @@ document.addEventListener("DOMContentLoaded", () => {
         message.textContent = '';
     });
 
-    loginForm.addEventListener("submit", (e) => {
+    loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         const email = document.getElementById("login-email").value;
         const password = document.getElementById("login-password").value;
-        // compare the email and password submitted
-        if (email === "test@example.com" && password === "password") {
-            message.textContent = "Login successful!";
-            message.style.color = 'green';
-        } else {
-            message.textContent = "Login unsuccessful";
+
+        try {
+            const response = await fetch(`http://localhost:3000/users?email=${email}`);
+            const users = await response.json();
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                message.textContent = "Login successful!";
+                message.style.color = 'green';
+                loginContainer.style.display = 'none';
+            } else {
+                message.textContent = "Login unsuccessful";
+                message.style.color = 'red';
+                loginContainer.style.display = "none";
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            message.textContent = 'Error occurred during login!';
             message.style.color = 'red';
-            loginForm.reset();
         }
     });
-
+     
     signupLink.addEventListener("click", (e) => {
         e.preventDefault();
         signupContainer.style.display = "block";
@@ -40,17 +51,36 @@ document.addEventListener("DOMContentLoaded", () => {
         message.textContent = '';
     });
 
-    signupForm.addEventListener("submit", (e) => {
+    signupForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         const email = document.getElementById("signup-email").value;
         const password = document.getElementById("signup-password").value;
         const confirmPassword = document.getElementById("signup-confirm-password").value;
+
         if (password === confirmPassword) {
-            message.textContent = 'Sign-up successful! Please login.';
-            message.style.color = 'green';
-            signupForm.reset();
-            signupContainer.style.display = 'none';
-            loginContainer.style.display = 'block';
+            try {
+                const response = await fetch("http://localhost:3000/users", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                if (response.ok) {
+                    message.textContent = 'Sign-up successful! Please login.';
+                    message.style.color = 'green';
+                    signupForm.reset();
+                    signupContainer.style.display = 'none';
+                    loginContainer.style.display = 'block';
+                } else {
+                    message.textContent = 'Sign-up failed!';
+                    message.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                message.textContent = 'Error occurred during sign-up!';
+                message.style.color = 'red';
+            }
         } else {
             message.textContent = 'Passwords do not match';
             message.style.color = 'red';
