@@ -232,3 +232,24 @@ body, html {
     margin: 20px auto;
     text-align: center;
 }
+
+
+
+
+.slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    animation: fade 3s;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes fade {
+    from { opacity: 0.4 } 
+    to { opacity: 0.2;}
+    to { opacity: 1 }
+}

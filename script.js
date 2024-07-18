@@ -86,4 +86,28 @@ document.addEventListener("DOMContentLoaded", () => {
             message.style.color = 'red';
         }
     });
+    // slide show implementation
+    // Select all slideshow containers
+    const slideshowContainers = document.querySelectorAll(".slideshow-container");
+
+    // Iterate over each slideshow container
+    slideshowContainers.forEach(container => {
+        let slideIndex = 0;
+        const slides = container.querySelectorAll(".slide");
+
+        // Function to show slides
+        function showSlides() {
+            slides.forEach(slide => {
+                slide.style.display = "none";
+            });
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        showSlides(); // Initial call to start the slideshow
+    });
 });
