@@ -1,6 +1,8 @@
 # Nawiri Project
 https://nawiri-olive.vercel.app/
 
+####Ensure the json server is running
+
 ## Project Description
 
 The Nawiri Project is a web application designed to provide information about various retreat centers. Users can view details about each center, including images and descriptions, and can book a stay using the provided booking form. The application also features login and signup functionalities for user authentication.
