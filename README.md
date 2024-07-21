@@ -1,4 +1,5 @@
 # Nawiri Project
+https://nawiri-olive.vercel.app/
 
 ## Project Description
 
@@ -17,6 +18,7 @@ The Nawiri Project is a web application designed to provide information about va
 Follow these instructions to set up and run the project on your local machine.
 
 ### Prerequisites
-npm install -g json-server
+npm install -g json-server. 
+
 json-server --watch db.json
 - 
