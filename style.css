@@ -237,12 +237,17 @@ body, html {
 
 
 
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
 .slide {
     display: none;
     width: 100%;
     height: auto;
-    animation: fade 3s;
-    transition: opacity 2s ease-in-out;
 }
 
 .slide img {
@@ -250,11 +255,16 @@ body, html {
     height: auto;
 }
 
+/* Add some fade-in/fade-out animation */
 @keyframes fade {
-    from { opacity: 0.4 } 
-    to { opacity: 0.2;}
+    from { opacity: 0.4 }
     to { opacity: 1 }
 }
+
+.slide {
+    animation: fade 1.5s ease-in-out;
+}
+
 /* booking form*/
 .form-container {
     z-index: 1;
